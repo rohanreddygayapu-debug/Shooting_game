@@ -1,0 +1,216 @@
+/* Fullscreen styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Set background color */
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block; /* Remove default inline spacing */
+    border: none; /* Remove border if not needed */
+}
+
+/* Your existing styles here... */
+
+/* General styles */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    table-layout: fixed;
+    width: 760px;
+    border-spacing: 0;
+}
+
+td { 
+    width: 185px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h3 {
+    color: red;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-top: 1px solid blue;
+}
+
+h3.meet {
+    color: blue;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: blue;
+    text-align: left;
+}
+
+li {
+    padding-left: 5px;
+}
+
+li.description {
+    padding-right: 5px;
+    font-weight: normal;
+    font-size: 0.8em;
+    color: red;
+}
+
+li.bullet {
+    padding-left: 1.5em;
+    text-indent: -1.2em;
+}
+
+#labels {
+    color: blue;
+}
+
+#controls {
+    color: red;
+}
+
+#score_label {
+    vertical-align: top;
+}
+
+#values {
+    color: red;
+}
+
+.content {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 1px solid blue;
+    border-right: 1px solid blue;
+}
+
+.title  {
+    margin: auto;
+    border-left: 5px solid blue;
+    border-right: 5px solid blue;
+    border-top: 5px solid blue;
+    display: flex;
+    justify-content: space-between; /* Ensures buttons are left and right */
+    align-items: center;
+}
+
+#first, #middle, #last {
+    flex: 1;
+    text-align: center;
+}
+
+#first {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#last {
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#restart-btn, #pause-btn {
+    background-color: black; /* Matches the game background */
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: white; /* Stands out like the game text */
+    border: 2px solid red; /* Border to match the red tones of the title */
+    padding: 10px 20px; /* Adds space inside the buttons */
+    font-size: 16px; /* Adjust font size for visibility */
+    cursor: pointer; /* Make the cursor change to pointer when hovering */
+    border-radius: 5px; /* Rounded corners for better aesthetics */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+#restart-btn:hover, #pause-btn:hover {
+    background-color: red; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+
+.control_label {
+    color: blue;
+    font-size: 1.2em;	
+}
+
+.control_description {
+    font-size: 1.2em;	
+}
+
+td.cast {
+    width: 145px;
+    color: red;
+    font-size: 1.2em;
+    border-right: 1px solid blue;
+}
+
+td.cast_description {
+    width: 145px;
+    color: red;
+    font-size: 1em;
+    vertical-align: top;
+    border-right: 1px solid blue;
+    border-bottom: 1px solid blue;
+}
+
+td.last {
+    border-right: none;
+}
+
+td.top {
+    border-top: 1px solid blue;
+    padding-top: 5px;
+}
+
+/* Shooting Effect */
+.shoot {
+    animation: shootAnimation 0.2s forwards;
+}
+
+@keyframes shootAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Enemy Movement */
+.enemy {
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+/* Explosion Animation */
+.explosion {
+    animation: explode 0.5s forwards;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% { background-color: #000; }
+    100% { background-color: #333; }
+}
